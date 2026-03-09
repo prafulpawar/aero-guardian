@@ -1,11 +1,11 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Shield, Plane, Settings, Lock, Award, FileCheck } from "lucide-react";
+import { Shield, Plane, Settings, Lock, Award, FileCheck, Database, BookOpen } from "lucide-react";
 
 const certifications = [
   {
     icon: Shield,
-    title: "IAQG Aerospace Auditor",
+    title: "IAQG Aerospace Auditor (AS9100D)",
     summary: "Qualified under the International Aerospace Quality Group framework to perform certification audits against globally recognized aerospace standards.",
     details: [
       "Authorization to audit AS9100-compliant organizations",
@@ -27,7 +27,7 @@ const certifications = [
   },
   {
     icon: Award,
-    title: "ISO 9001 Lead Auditor",
+    title: "ISO 9001:2015 Lead Auditor",
     summary: "Global standard for Quality Management Systems across industries.",
     details: [
       "Organizational process effectiveness evaluation",
@@ -38,13 +38,24 @@ const certifications = [
   },
   {
     icon: Settings,
-    title: "IATF 16949",
+    title: "IATF 16949:2016",
     summary: "Automotive and complex manufacturing supply chain quality systems, applicable in aerospace-adjacent environments.",
     details: [
       "Defect prevention systems evaluation",
       "Process capability and performance metrics",
       "Supplier risk control",
       "Production discipline and traceability",
+    ],
+  },
+  {
+    icon: Shield,
+    title: "Exemplar Global Lead OHSMS Auditors",
+    summary: "Lead auditor certification for Occupational Health and Safety Management Systems (OHSAS 18001:2007).",
+    details: [
+      "Occupational health and safety auditing",
+      "Safety policy enforcement",
+      "Workplace risk identification and mitigation",
+      "Compliance with global OHSAS frameworks",
     ],
   },
   {
@@ -55,7 +66,7 @@ const certifications = [
       "Practical aircraft systems knowledge",
       "Authority to certify maintenance work",
       "Heavy and line maintenance experience",
-      "Airworthiness compliance authority",
+      "C.S.E. Aviation Engineering College (AME Diploma)",
     ],
   },
   {
@@ -71,13 +82,73 @@ const certifications = [
   },
   {
     icon: Lock,
-    title: "Security Clearance",
+    title: "Stage 2 Secret Clearance Certificate",
     summary: "Authorized to work on controlled government, defense, and sensitive military programs.",
     details: [
       "Defense procurement projects",
-      "Controlled goods programs",
       "Military aircraft manufacturing oversight",
       "Government Quality Assurance initiatives",
+    ],
+  },
+  {
+    icon: FileCheck,
+    title: "Controlled Goods Certificate",
+    summary: "Certified for the examination, possession, or transfer of controlled goods.",
+    details: [
+      "Controlled Goods - Quality Assurance (RCMP)",
+      "Compliance with Canadian defense trade controls",
+    ],
+  },
+  {
+    icon: Database,
+    title: "Material Identification MI Data Specialist",
+    summary: "Certification in Material Identification and Data Specialization.",
+    details: [
+      "Materiel cataloging and identification",
+      "Data governance frameworks",
+      "Inventory precision and tracking",
+    ],
+  },
+  {
+    icon: Settings,
+    title: "DRMIS Certification & Training",
+    summary: "Defense Resource Management Information System (DRMIS) qualifications.",
+    details: [
+      "DRMIS Navigation and Operations",
+      "Defense materiel management",
+      "Equipment maintenance tracking within DRMIS",
+    ],
+  },
+  {
+    icon: Database,
+    title: "Principle of Material Master Data Certificate",
+    summary: "Foundational certification on the lifecycle and structuring of Material Master Data.",
+    details: [
+      "Material master data structures",
+      "Data consistency and validation",
+      "Integration with enterprise resource planning",
+    ],
+  },
+  {
+    icon: BookOpen,
+    title: "Master Data Governance (MDG) & MMR",
+    summary: "Specialized training on SAP MDG Navigation and Material Master Records.",
+    details: [
+      "Introduction to Master Data Governance MDG Navigation in Fiori (303648)",
+      "How to request a material master record certificate (303664)",
+      "How to enrich and approved material master record certificate (303672)",
+      "Material master record (MMR) Reporting (303666)",
+    ],
+  },
+  {
+    icon: Award,
+    title: "Leadership & Supervisory Skills",
+    summary: "Trained in leadership and team management to guide organizations effectively.",
+    details: [
+      "KLM Leadership Training",
+      "America Management Association (Supervisory Skills)",
+      "Cross-functional team coordination",
+      "Strategic business alignment",
     ],
   },
 ];

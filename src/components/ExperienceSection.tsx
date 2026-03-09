@@ -75,7 +75,7 @@ const ExperienceSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {services.map((service, i) => (
             <motion.div
               key={service.category}
@@ -102,6 +102,40 @@ const ExperienceSection = () => {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="w-16 h-[2px] bg-primary mb-6" />
+          <h3 className="font-heading text-xl md:text-2xl font-bold uppercase tracking-tight mb-8">
+            Key Career Engagements
+          </h3>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="p-5 border-l-2 border-primary/40 bg-card/30">
+              <h4 className="font-heading text-sm text-primary mb-1 uppercase tracking-wider">TUV Rheinland of North America</h4>
+              <p className="text-sm font-medium text-foreground/80">Quality Assurance 3rd Party Auditor</p>
+            </div>
+            <div className="p-5 border-l-2 border-primary/40 bg-card/30">
+              <h4 className="font-heading text-sm text-primary mb-1 uppercase tracking-wider">Department of National Defence</h4>
+              <p className="text-sm font-medium text-foreground/80">Life Cycle Quality Manager / Specialist</p>
+            </div>
+            <div className="p-5 border-l-2 border-primary/40 bg-card/30">
+              <h4 className="font-heading text-sm text-primary mb-1 uppercase tracking-wider">Bombardier Aerospace</h4>
+              <p className="text-sm font-medium text-foreground/80">Line Manager QA / ACA & QC Inspector</p>
+            </div>
+            <div className="p-5 border-l-2 border-primary/40 bg-card/30">
+              <h4 className="font-heading text-sm text-primary mb-1 uppercase tracking-wider">First Air</h4>
+              <p className="text-sm font-medium text-foreground/80">Auditor / Quality Assurance Supervisor</p>
+            </div>
+            <div className="p-5 border-l-2 border-primary/40 bg-card/30">
+              <h4 className="font-heading text-sm text-primary mb-1 uppercase tracking-wider">United Nation Aviation</h4>
+              <p className="text-sm font-medium text-foreground/80">Base Manager</p>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

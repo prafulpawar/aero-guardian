@@ -3,13 +3,14 @@ import heroBg from "@/assets/hero-bg.jpg";
 import { Shield, Award, Plane } from "lucide-react";
 
 const badges = [
-  "IAQG Aerospace Auditor",
-  "AS9100D Lead Auditor",
-  "ISO 9001",
-  "IATF 16949",
+  "Lead Auditor",
+  "AS9100D",
+  "ISO 9001:2015",
+  "IATF 16949:2016",
+  "OHSAS 18001:2007",
   "AME M2",
   "FAA A&P",
-  "Security Cleared",
+  "Secret Clearance Level II",
 ];
 
 const HeroSection = () => {
@@ -33,19 +34,19 @@ const HeroSection = () => {
             <Plane className="w-6 h-6 text-primary" />
           </div>
 
-          <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight uppercase mb-4">
+          <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight uppercase mb-4">
             Francis{" "}
             <span className="text-gradient-gold">Ukposidolo</span>
           </h1>
 
           <div className="w-24 h-[2px] bg-primary mx-auto mb-6" />
 
-          <p className="font-heading text-xl md:text-2xl tracking-[0.3em] uppercase text-muted-foreground mb-4">
-            Aerospace & Defense Quality Authority
+          <p className="font-heading text-lg sm:text-xl md:text-2xl tracking-[0.2em] md:tracking-[0.3em] uppercase text-muted-foreground mb-4">
+            Lead Auditor, Consultant & Quality Authority
           </p>
 
-          <p className="text-lg text-primary font-medium tracking-wide mb-12">
-            CEO — Safe Aero Solutions
+          <p className="text-base sm:text-lg text-primary font-medium tracking-wide mb-12 max-w-2xl mx-auto">
+            Helping companies translate business goals into reality.
           </p>
         </motion.div>
 
@@ -53,12 +54,12 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto"
+          className="flex flex-wrap justify-center gap-2 sm:gap-3 max-w-4xl mx-auto"
         >
           {badges.map((badge) => (
             <span
               key={badge}
-              className="px-4 py-1.5 border border-border text-xs font-heading tracking-widest uppercase text-muted-foreground hover:border-primary hover:text-primary transition-colors duration-300"
+              className="px-3 sm:px-4 py-1.5 border border-border text-[10px] sm:text-xs font-heading tracking-widest uppercase text-muted-foreground hover:border-primary hover:text-primary transition-colors duration-300"
             >
               {badge}
             </span>
