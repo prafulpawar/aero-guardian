@@ -1,5 +1,5 @@
-import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { useState } from "react";
 import { Shield, Plane, Settings, Lock, Award, FileCheck, Database, BookOpen } from "lucide-react";
 
 const certifications = [
@@ -129,17 +129,48 @@ const certifications = [
       "Integration with enterprise resource planning",
     ],
   },
+  // Added Missing Certificates from here
   {
     icon: BookOpen,
-    title: "Master Data Governance (MDG) & MMR",
-    summary: "Specialized training on SAP MDG Navigation and Material Master Records.",
+    title: "Introduction to MDG Navigation in Fiori (303648)",
+    summary: "Foundational training on navigating SAP Master Data Governance utilizing the Fiori user experience.",
     details: [
-      "Introduction to Master Data Governance MDG Navigation in Fiori (303648)",
-      "How to request a material master record certificate (303664)",
-      "How to enrich and approved material master record certificate (303672)",
-      "Material master record (MMR) Reporting (303666)",
+      "SAP Fiori Launchpad utilization",
+      "MDG dashboard navigation and functionality",
+      "User-centric data governance operations",
     ],
   },
+  {
+    icon: FileCheck,
+    title: "How to Request a Material Master Record (303664)",
+    summary: "Certification on the procedural workflows for initiating and requesting new Material Master Records.",
+    details: [
+      "SAP MDG request workflows and structuring",
+      "Data entry standards for new materials",
+      "Cross-functional approval routing processes",
+    ],
+  },
+  {
+    icon: Settings,
+    title: "Enrich & Approve Material Master Record (303672)",
+    summary: "Specialized training in validating, enriching, and finalizing material master data approvals.",
+    details: [
+      "Data quality enrichment techniques",
+      "Verification of technical material specifications",
+      "Final approval workflows and execution in MDG",
+    ],
+  },
+  {
+    icon: Database,
+    title: "Material Master Record (MMR) Reporting (303666)",
+    summary: "Certification in extracting, analyzing, and reporting on Material Master Records to ensure data integrity.",
+    details: [
+      "MMR data extraction and analytical techniques",
+      "Auditing and data integrity reporting",
+      "Inventory and catalog data compliance tracking",
+    ],
+  },
+  // Added Missing Certificates till here
   {
     icon: Award,
     title: "Leadership & Supervisory Skills",
