@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Shield, Plane, Settings, Lock, Award, FileCheck, Database, BookOpen } from "lucide-react";
+import { Shield, Plane, Settings, Lock, Award, FileCheck, Database, BookOpen, ChevronDown } from "lucide-react";
 
 const certifications = [
   {
@@ -110,13 +110,21 @@ const certifications = [
     ],
   },
   {
-    icon: Settings,
-    title: "DRMIS Certification & Training",
+    icon: Database,
+    title: "DRMIS Certification",
     summary: "Defense Resource Management Information System (DRMIS) qualifications.",
     details: [
+      "Defense materiel management credentials",
+      "Equipment maintenance tracking qualifications",
+    ],
+  },
+  {
+    icon: Settings,
+    title: "DRMIS Training Certificate",
+    summary: "Formal training completion in DRMIS operations and workflows.",
+    details: [
       "DRMIS Navigation and Operations",
-      "Defense materiel management",
-      "Equipment maintenance tracking within DRMIS",
+      "Systematic cataloging and compliance tracking",
     ],
   },
   {
@@ -129,7 +137,6 @@ const certifications = [
       "Integration with enterprise resource planning",
     ],
   },
-  // Added Missing Certificates from here
   {
     icon: BookOpen,
     title: "Introduction to MDG Navigation in Fiori (303648)",
@@ -170,7 +177,6 @@ const certifications = [
       "Inventory and catalog data compliance tracking",
     ],
   },
-  // Added Missing Certificates till here
   {
     icon: Award,
     title: "Leadership & Supervisory Skills",
@@ -199,37 +205,54 @@ const CertCard = ({
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, delay: index * 0.08 }}
+      transition={{ duration: 0.5, delay: index * 0.05 }}
       onClick={() => setExpanded(!expanded)}
-      className="group cursor-pointer border border-border bg-card p-6 hover:border-primary/50 transition-all duration-300 hover:glow-gold"
+      className="group cursor-pointer border border-border bg-card/80 backdrop-blur-sm p-5 md:p-6 rounded-xl hover:border-primary/60 hover:shadow-lg transition-all duration-300 h-fit"
     >
-      <div className="flex items-start gap-4">
-        <Icon className="w-5 h-5 text-primary mt-1 shrink-0" />
-        <div className="flex-1">
-          <h3 className="font-heading text-base font-semibold tracking-wide uppercase mb-2 group-hover:text-primary transition-colors">
-            {cert.title}
-          </h3>
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            {cert.summary}
-          </p>
-          {expanded && (
-            <motion.ul
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              className="mt-4 space-y-2"
-            >
-              {cert.details.map((d) => (
-                <li
-                  key={d}
-                  className="text-sm text-foreground/70 flex items-start gap-2"
+      <div className="flex items-start justify-between gap-4">
+        <div className="flex items-start gap-4 flex-1">
+          <div className="p-2 md:p-2.5 bg-primary/10 rounded-lg shrink-0 transition-colors group-hover:bg-primary/20">
+            <Icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+          </div>
+          <div className="flex-1">
+            <h3 className="font-heading text-sm md:text-base font-semibold tracking-wide uppercase mb-2 group-hover:text-primary transition-colors pr-2">
+              {cert.title}
+            </h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              {cert.summary}
+            </p>
+            
+            <AnimatePresence>
+              {expanded && (
+                <motion.ul
+                  initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                  animate={{ opacity: 1, height: "auto", marginTop: 16 }}
+                  exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                  className="space-y-2 overflow-hidden"
                 >
-                  <span className="w-1 h-1 rounded-full bg-primary mt-2 shrink-0" />
-                  {d}
-                </li>
-              ))}
-            </motion.ul>
-          )}
+                  {cert.details.map((d, i) => (
+                    <li
+                      key={i}
+                      className="text-sm text-foreground/80 flex items-start gap-2"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0 shadow-[0_0_5px_rgba(212,175,55,0.8)]" />
+                      <span className="leading-snug">{d}</span>
+                    </li>
+                  ))}
+                </motion.ul>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
+        
+        {/* Chevron Arrow for Visual Cue */}
+        <motion.div
+          animate={{ rotate: expanded ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+          className="shrink-0 mt-1.5"
+        >
+          <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+        </motion.div>
       </div>
     </motion.div>
   );
@@ -237,30 +260,38 @@ const CertCard = ({
 
 const CertificationsSection = () => {
   return (
-    <section className="py-24 md:py-32 bg-secondary/30">
-      <div className="container mx-auto px-6">
+    <section className="py-24 md:py-32 bg-secondary/20 relative overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-14"
+          className="mb-12 md:mb-16 text-center md:text-left"
         >
-          <h2 className="font-heading text-sm tracking-[0.4em] uppercase text-primary mb-3">
+          <h2 className="font-heading text-xs md:text-sm tracking-[0.4em] uppercase text-primary mb-3">
             Certifications & Regulatory Authority
           </h2>
-          <div className="w-16 h-[2px] bg-primary" />
+          <div className="w-16 h-[2px] bg-primary mx-auto md:mx-0" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-4">
+        {/* items-start prevents cards from stretching unevenly when expanded */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6 items-start">
           {certifications.map((cert, i) => (
             <CertCard key={cert.title} cert={cert} index={i} />
           ))}
         </div>
 
-        <p className="text-xs text-muted-foreground mt-6 text-center">
+        <motion.p 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="text-xs text-muted-foreground mt-10 flex items-center justify-center gap-2"
+        >
+          <span className="animate-pulse w-2 h-2 rounded-full bg-primary"></span>
           Click any certification to expand details
-        </p>
+        </motion.p>
       </div>
     </section>
   );
