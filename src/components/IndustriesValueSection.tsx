@@ -23,7 +23,6 @@ const IndustriesValueSection = () => {
   return (
     <section className="py-24 md:py-32 bg-secondary/30">
       <div className="container mx-auto px-6">
-        {/* Industries */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -58,7 +57,6 @@ const IndustriesValueSection = () => {
           </div>
         </motion.div>
 
-        {/* Strategic Value */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

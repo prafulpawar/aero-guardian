@@ -245,7 +245,6 @@ const CertCard = ({
           </div>
         </div>
         
-        {/* Chevron Arrow for Visual Cue */}
         <motion.div
           animate={{ rotate: expanded ? 180 : 0 }}
           transition={{ duration: 0.3 }}
@@ -275,7 +274,6 @@ const CertificationsSection = () => {
           <div className="w-16 h-[2px] bg-primary mx-auto md:mx-0" />
         </motion.div>
 
-        {/* items-start prevents cards from stretching unevenly when expanded */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6 items-start">
           {certifications.map((cert, i) => (
             <CertCard key={cert.title} cert={cert} index={i} />
